@@ -36,11 +36,18 @@
   height: 3rem;
 }
 
+// 하단 프로필 사진 
 .content .avatar {
-  float: right !important;
+  float: left !important;
   box-sizing: content-box;
   border: 1rem solid var(--body-bg);
   transition: border-color 1s ease;
   margin-top: 5px !important;
   margin-right: 5px !important;
+}
+
+// 하단 소개글 
+.author-body-description{
+  margin-left: 200px !important;
+  margin-top: 40px !important;
 }
