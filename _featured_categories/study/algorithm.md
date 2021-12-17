@@ -1,10 +1,10 @@
 ---
 layout: list
 category: study
-bigtitle: Test1
-slug: test1
+bigtitle: Algorithm
+slug: algorithm
 description: >
-    하위메뉴 테스트 1
+    알고리즘 응용 복습
 related_posts:
 -
 list: true

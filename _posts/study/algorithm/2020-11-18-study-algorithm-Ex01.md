@@ -1,6 +1,6 @@
 ---
 layout: post
-title: test2-Ex01
+title: study-algorithm-Ex01
 image:
     path: /assets/img/blog/jeremy-bishop@0,5x.jpg
 description: >
@@ -9,7 +9,7 @@ sitemap: false
 hide_lase_modified: true
 categories:
  - study
- - test2
+ - algorithm
 ---
 
 Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.

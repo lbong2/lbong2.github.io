@@ -55,8 +55,8 @@ menu:
   - title:             Study
     url:               /study/
     submenu:
-     - title:         Test1
-       url:           /test1/
+     - title:         Algorithm
+       url:           /algorithm/
      - title:         Test2
        url:           /test2/
 
