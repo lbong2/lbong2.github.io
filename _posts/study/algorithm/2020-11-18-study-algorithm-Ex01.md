@@ -1,6 +1,7 @@
 ---
 layout: post
 title: study-algorithm-Ex01
+subtitle: 부제목 확인용
 image:
     path: /assets/img/blog/jeremy-bishop@0,5x.jpg
 description: >
