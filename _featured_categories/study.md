@@ -5,14 +5,14 @@ slug: study
 menu: true
 submenu: true
 description: >
-    하위 메뉴 예시
+    프로그래밍 공부
 ---
 # Study
 
 ## 카테고리
 
-* [Test1]{:.heading.flip-title} --- 테스트 1
-* [Test2]{:.heading.flip-title} --- 테스트 2
+* [Algorithm]{:.heading.flip-title} --- 알고리즘 응용 복습
+* [Test2]{:.heading.flip-title} --- 자료구조 복습
 
-[Test1]: /test1/
+[Algorithm]: /algorithm/
 [Test2]: /test2/
