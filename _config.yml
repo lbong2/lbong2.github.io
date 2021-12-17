@@ -28,7 +28,7 @@ description:           >
   CV개발자 지망생 블로그입니다. 
 
 # A shorter description for the sidebar.
-tagline:               건국대학교 전기전자 4학년
+tagline:               Konkuk univ. Electrical Electronic Engineering
 
 # A list of keywords for your blog
 keywords:              [CV, Computer Vision, Algorithm, Embedded]
@@ -426,3 +426,12 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://example.com
+
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: []
+    categories: []
+    tags: []
