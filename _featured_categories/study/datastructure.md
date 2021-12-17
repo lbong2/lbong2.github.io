@@ -1,10 +1,10 @@
 ---
 layout: list
 category: study
-bigtitle: Test2
-slug: test2
+bigtitle: DataStructure
+slug: datastructure
 description: >
-    하위메뉴 테스트 2
+    자료구조 복습
 related_posts:
 -
 list: true

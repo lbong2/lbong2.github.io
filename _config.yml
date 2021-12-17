@@ -57,8 +57,8 @@ menu:
     submenu:
      - title:         Algorithm
        url:           /algorithm/
-     - title:         Test2
-       url:           /test2/
+     - title:         DataStructure
+       url:           /datastructure/
 
 
 # Add links to the footer.

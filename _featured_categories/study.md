@@ -12,7 +12,7 @@ description: >
 ## 카테고리
 
 * [Algorithm]{:.heading.flip-title} --- 알고리즘 응용 복습
-* [Test2]{:.heading.flip-title} --- 자료구조 복습
+* [DataStructure]{:.heading.flip-title} --- 자료구조 복습
 
 [Algorithm]: /algorithm/
-[Test2]: /test2/
+[DataStructure]: /datastructure/
