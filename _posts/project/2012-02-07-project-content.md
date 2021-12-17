@@ -5,7 +5,7 @@ description: >
     description.
 sitemap: false
 hide_lase_modified: true
-categiries:
+categories:
  - project
 ---
 
