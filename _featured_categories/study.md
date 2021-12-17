@@ -9,7 +9,7 @@ description: >
 ---
 # Study
 
-## 카테고리
+## Categories
 
 * [Algorithm]{:.heading.flip-title} --- 알고리즘 응용 복습
 * [DataStructure]{:.heading.flip-title} --- 자료구조 복습
