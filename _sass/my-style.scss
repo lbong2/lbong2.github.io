@@ -35,3 +35,12 @@
 .nav-btn-bar {
   height: 3rem;
 }
+
+.content .avatar {
+  float: right !important;
+  box-sizing: content-box;
+  border: 1rem solid var(--body-bg);
+  transition: border-color 1s ease;
+  margin-top: 5px !important;
+  margin-right: 5px !important;
+}
