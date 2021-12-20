@@ -120,3 +120,8 @@
 .submenu.menu-wrapper.hide{
   display: none;
 }
+
+// 조회수 오른쪽 링크 박스 안보이게 
+a.external::after, a::after {
+  display: none !important;
+}
