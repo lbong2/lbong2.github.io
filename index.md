@@ -10,11 +10,11 @@ hide_description: true
 
 <!--author-->
 * * *
-<center>
+
 <span style="font-size:170%;font-weight:bold">
 이경봉
 </span>
-</center>
+
 
 <center>MAJOR : Electrical Electronic Engineering </center>
 
