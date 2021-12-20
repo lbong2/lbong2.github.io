@@ -7,7 +7,7 @@
             <!-- 메뉴 각각을 식별하기위한 인덱스 -->
             {% assign count = count | plus: 1 %}
             <li>
-                <div class="menu-wrapper" onmouseover="javascript:spread({count})" onmouseout="javascript:spread({count})">
+                <div class="menu-wrapper" onmouseover="javascript:spread({{count}})" onmouseout="javascript:spread({{count}})">
                     <!-- submenu 변수는 _config.yml 에서 추가합니다 -->
                     {% if node.submenu %}
                     <!-- spread 함수는 js 파일로 작성하고 my-head.html 에 추가합니다 -->
