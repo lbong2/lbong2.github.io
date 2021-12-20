@@ -45,7 +45,12 @@
       {% unless no_link_title %}</a>{% endunless %}
       {% assign alt = '' %}
     {% endif %}{% endunless %}
-
+    <!--게시물 생성시 hits 생성-->   
+    <div style="text-align:right; text-align: center">
+      <a href="https://hits.seeyoufarm.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"target="_blank">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://{{ site.url | remove_first:'https://' | remove_first: 'http://' }}{{ page.url }}&count_bg=%236190D3&title_bg=%23070707&icon=codio.svg&icon_color=%2307AFBA&title=%EC%A1%B0%ED%9A%8C%EC%88%98&edge_flat=false"/>
+      </a>
+    </div>
     {% include components/message.html text=post.description hide=hide_description alt=alt %}
    
   </header>
