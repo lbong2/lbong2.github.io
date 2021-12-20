@@ -1,8 +1,9 @@
 ---
-layout: list
-title: Posts
+layout: about
+image: /assets/img/me/me.jpg
 description: >
-  This is the `list` layout for showing blog posts, which shows just the title and groups them by year of publication.
-  Check out the `blog` layout for comparison.
-grouped: true
+인공지능을 공부하고 있는 대학원생입니다.
+hide_description: false
 ---
+# About
+<!--author-->
