@@ -2,7 +2,7 @@
 layout: about
 image: /assets/me/me.jpg
 description: >
-  컴퓨터 비전 개발자를 희망하는 대학생입니다. 
+  컴퓨터 비전 개발자를 희망하는 대학생입니다.
 hide_description: true
 ---
 
@@ -30,7 +30,7 @@ hide_description: true
 >
 > Github : [https://github.com/lbong2](https://github.com/lbong2)
 
-## Education 
+## Education
 > Mar.2017 ~ ing 건국대학교 재학중
 >
 > 전기전자공학부 (Electrical Electronic Engineering)
@@ -39,8 +39,9 @@ hide_description: true
 ---
 * Computer Vision
 * Machine Learning / Deep Learning
+* Embedded programing
 
-## Project 
+## Project
 ---
 * **Line Tracer with Traffic signal recognizing(Rpi4, OpenCV)**
 * **Smart House with Car number recognizing (Rpi4, OpenCV)**
@@ -53,6 +54,6 @@ hide_description: true
 ## Skills and Certification
 
 ---
--Language : C/C++
+-Language : C/C++, Python
 
 -FrameWork: OpenCV
