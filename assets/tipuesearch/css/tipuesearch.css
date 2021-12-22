@@ -58,7 +58,7 @@ http://www.tipue.com/search
 }
 .tipue_search_left
 {
-     float: right;
+     float: left;
      padding: 5px 5px 0 0;
      max-height: 20px;
 }
