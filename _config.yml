@@ -61,6 +61,8 @@ menu:
        url:           /algorithm/
      - title:         DataStructure
        url:           /datastructure/
+     - title:         OpenCV
+       url:           /opencv/
 
 
 # Add links to the footer.
