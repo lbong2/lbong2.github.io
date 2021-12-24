@@ -54,6 +54,8 @@ menu:
     url:               /posts/
   - title:             Project
     url:               /project/
+  - title:             Paper
+    url:               /paper/
   - title:             Study
     url:               /study/
     submenu:
@@ -63,6 +65,7 @@ menu:
        url:           /datastructure/
      - title:         OpenCV
        url:           /opencv/
+  
 
 
 # Add links to the footer.
