@@ -3,7 +3,6 @@ layout: post
 title: 01. 자료구조_Stack
 description: >
     Stack 자료구조
-sitemap: false
 hide_lase_modified: true
 categories:
  - study

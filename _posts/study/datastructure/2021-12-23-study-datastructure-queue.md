@@ -3,7 +3,6 @@ layout: post
 title: 02. 자료구조_Queue
 description: >
     Queue 자료구조
-sitemap: false
 hide_lase_modified: true
 categories:
  - study
@@ -256,6 +255,6 @@ void main() {
 
 stack과 함께 자주 쓰일 자료구조.
 
- queue는 stack과 다르게 Doubly Linked-List로 구현했다. 
+ queue는 stack과 다르게 Doubly Linked-List로 구현했다.
 
 큰 의미는 없고 일반 linked-list로 똑같이 구현 가능하다.
