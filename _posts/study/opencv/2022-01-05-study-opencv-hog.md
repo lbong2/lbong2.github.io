@@ -86,3 +86,6 @@ void Grad(Mat in, int r, int c, int* X, int* Y) {
 	}
 }
 ~~~
+동적 할당 받은 포인터를 매개변수로 각 방향 Gradient를 구한다.
+
+#### 추후 추가 예정
