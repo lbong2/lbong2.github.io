@@ -10,6 +10,9 @@ categories:
 
 # Depth estimation from image structure 논문 리딩
 
+* toc
+{:toc .large-only}
+
 ## 1. Introduction
 
 <p align="center">
@@ -197,3 +200,41 @@ fig. 4는 인공, 자연 구조물의 local 스펙트럼 시그니처의 발전(
 요약하자면 이미지 구조와 평균 깊이 사이의 강한 관련성이 존재한다.
 
 ## 4. Low-Dimensional Representations of Image Structure
+
+2.~ 에서 얻었던 영상 특징은 매우 고차원이다. 이번 섹션에서는 그러한 특징들에 이미지 구조의 저차원 표현, 에 대해 논의하고, 고차원 통계에 기반한 다른 구조적 표현에 대해 리뷰한다.
+
+wavelet coefficients 통계에 기반한 다수의 저차원 표현법은 텍스쳐, 물체, 장면 표현에 줄곧 쓰여져 왔다.
+
+global 통계에 기반한 표현법은 텍스쳐를 묘사하는데 편리하다.
+
+전역 통계는 정상성과 전체 이미지의 평균 측정에 의해 계산될 것이라 추정한다.
+
+그것들이 비정상성 이미지를 표현하는데 적절하지 않을지라 전역 통계는 인식을 위한 쓸만한 정보를 제공한다.
+<br>
+$$A_k^2 = \Sigma_{\mathbf{x}}|I(\mathbf{x}, k)|^2 = \int A(\mathbf{f})^{2}H_{k}(\mathbf{f})d\mathbf{f}$$
+<br>
+해당 특성$$A_k^2$$은 이미지의 power spectrum이다.
+$$A(\mathbf{f})^{2}$$은 푸리에 트랜스폼의 평균이다.
+$$H_{k}(\mathbf{f})$$는 wavelet $$h_{k}(\mathbf{x})$$이다.
+
+$$A_{k}$$는 이미지의 2번째 통계 정보를 부호화한다. $$K$$는 분해에 쓰인 wavelet의 개수이다. 그리고, 그러므로, 차원의 표현이다.
+
+이 표현은 우세한 방향 그리고 이미지의 스케일로 부호화 된다.
+
+공간 조직 혹은 이미지 내 물체의 모양에 대한 정보가 없다. 표현에 의해 보존된 정보를 보여주기 위해, fig. 6는 실제 세계의 사진과 같은 $$A_{k}$$값을 가진 사진들을 보여준다. 그러므로 실제 세계 사진과 합성된 텍스쳐는 이 표현에 의해서는 구분되지 않는다.
+<p align="center">
+<img src="/assets/img/etc/graduation06.gif"  width="600" >
+<br> fig. 6
+</p>
+
+자연 이미지 통계에 대한 연구들에 따르면 고차 통계량은 실제 사진에서 특정한 형질을 보여준다.
+
+예를 들어 다른 방향과 스케일에서의 wavelet coefficients의 magnitude는 연관된다.
+
+연관성 계수는 이미지 구성과 지역적 분포 요소 함수이다.
+
+The magnitude correlations는
+$$A_{i, j}^{2}= \Sigma_{\mathbf{x}}|I(\mathbf{x}, i)||I(\mathbf{x}, j)|$$
+로 표현할 수 있다.
+
+이것은 compute에 의해 감소될 수 있지만 해당 표현의 차원은 $$K^{2}$$이다.
