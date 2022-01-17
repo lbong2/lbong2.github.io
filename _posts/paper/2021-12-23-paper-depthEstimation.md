@@ -44,7 +44,7 @@ $$
 $$i(\mathbf{x})$$는 쉽게 말해 이미지의 pixel 값이다. 또한 $$j = \sqrt -1$$
 
 공간 주파수 $$\mathbf{f} = (fx, fy) \in [-0.5, 0.5] \times [-0.5, 0.5]$$
-다시말해 $$\mathbf{f}$$는 이미지의 pixel 좌표 $$(x, y)$$를 $$(\frac{x - W / 2}{W}, \frac{y - H / 2}{H})$$형태로 변환한 값이며
+다시말해 $$\mathbf{f}$$는 이미지의 pixel 좌표 $$(x, y)$$를 $$(\frac{W / 2 - x}{W}, \frac{H / 2 - y}{H})$$형태로 변환한 값이며
 따라서 $$[-0.5, 0.5] \times [-0.5, 0.5]$$의 범위를 가진다는 것을 알 수 있다.
 $$h(x)$$는 boundary effect를 줄이기 위한 circular window라고 서술되어 있다. (추가적인 검색 필요)
 
@@ -73,4 +73,42 @@ fig. 2는 6000개의 이미지로부터 수집한 스펙트럼 시그니처의 5
 $$I(\mathbf{x}, k) = \Sigma_{\mathbf{x'}}i(\mathbf{x'})h_{k}(\mathbf{x} - \mathbf{x'})$$
 
 <br>
-$h_{k}$ 는  
+
+어떤 $$h_{k}$$ 함수를 선택하는지에 따라 다른 표현을 제공한다.
+가장 일반적으로 사용되는 함수는 Gabor's wavelet :
+<br>
+$$h_{k}(\mathbf{x}) = e^{-\pi||\mathbf{x}||^{2} / \sigma_{k}^{2}e^{-2\pi j<f_{k}, \mathbf{x}>}}$$
+<br>
+$$I(\mathbf{x}, k)$$는 $$\mathbf{x}$$에서 $$f_k$$로 정의된 공간 주파수를 complex Gabor filter로 조정한 결과값이다. 이것은 local scale과 orientation information을 encode한 결과이다.
+
+2번째 케이스로 $$h_{k}$$가
+<br>
+$$h_{k}(\mathbf{x}) = h_{r}(\mathbf{x})e^{-j2\pi<f_{k}, \mathbf{x}>}$$
+<br>
+이라면 $$I(\mathbf{x}, k)$$는 Windowed Fourier Transform과 일치한다. 그리고 2-1. 에서 쓰여진 $$\mathbf{f}$$를 통해 좀 더 편리하게 정의 할 수 있다.
+<br>
+$$A(\mathbf{x}, k) = |I(\mathbf{x}, k)|$$는 $$mathbf{x}$$와 인접한 지역의 구조적 정보를 제공한다. Gabor Transform과 WFT모두 비슷한 구조 정보를 제공한다. 시각화의 목적으로 이 논문에서는 WFT를 사용한다.
+<p align="center">
+<img src="/assets/img/etc/graduation03.gif"  width="600" height="370">
+<br> fig. 3
+</p>
+fig. 3에서는 section별로 10 x 10 window를 사용했다.
+
+
+## 3. Image Structure as a Depth Cue
+
+이번 섹션에서는 main source인 스펙트럼 특징과 평균 깊이의 variablity에 대해 소개한다.
+
+많은 연구들은 자연 구조물 이미지의 통계에서 불변적 스케일 특성에 집중했다. 이러한 연구들은 대부분 작은 스케일링 변화에 초점을 맞춘다. 그리고 스케일을 위한 절대 단위(ex: meter)을 사용하지 않는다.
+
+그러나, 스케일의 큰 변화를 고려할 때(factor > 10), 이미지의 통계와 절대 단위 중요한 변화가 존재한다.
+영상 구조와 이미지 평균 깊이 사이이ㅢ 종속성을 설명할 수 있는 2가지 이유가 있다.
+
+* The point of view
+
+> 정상적인 조건에서 관찰자가 채택한 특정한 장면의 관점은 강제적이다(?). 물체는 대부분의 관점에서 관찰된다. 하지만 거리와 스케일은 사람의 스케일을 앞지른다. 가능한 뷰표인트는 제한되고 예측되게 바뀐다. 결과적으로 이미지의 우세한 방향은 관점, 주된 구조의 공간 배열에 따라 매우 다르다.(지면의 위치, 수평선)
+
+* the building blocks
+> 빌딩 블록은 장면을 구성하는 요소를 가리킨다.빌딩 블록은 자연과 인공 환경에서 매우 다르다. 또한 실내와 야외에서도. 장면의 빌딩 블록은 또한 기능적 제약과 각 스케일에서 공간을 만드는 물리적 과정 때문에 큰 차이가 있다.
+
+## 3-1. Relationship between the Global Spectral Signature and Mean Depth
