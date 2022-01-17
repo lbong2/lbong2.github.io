@@ -33,7 +33,7 @@ fig.1(b)에서 볼 수 있듯, 자연 구조, 인공 구조는 구조물의 스�
 
 __해당 논문에서는 이미지를 영역 또는 물체로 구분지어 분석할 필요없는 monocular image의 절대 깊이 계산을 위한 소스를 도입한다.__
 
-## 2. Image Structure
+## 2-1. Image Structure
 
 __Discrete Fourier Transform:__
 <br>
@@ -62,3 +62,15 @@ fig. 2는 6000개의 이미지로부터 수집한 스펙트럼 시그니처의 5
 
 인공 구조물의 plot은 수평 및 수직 방향으로 우세한 모양을 갖는다.
 자연 구조물의 plot은 가로 세로 방향으로 다소 강조된 전 방향으로 우세한 모양을 갖는다.
+
+## 2-2. Spatial Organization and Local Spectral Signatures
+
+이미지 묘사의 중요한 측면은 global amplitude spectrum이 표현하지 않는, 이미지의 구조적 요소의 공간적 배열에 관한 것이다.
+(ex: 파라노마 이미지는 상단에 하늘이 위치하고 낮은 spatial frequency를 갖고, 중심 부분에 수평선, 대개 하단의 texture로 특징된다. )
+
+이러한 구조적 배열은 특정한 패턴 방향과 스케일을 갖는다. 이것은 wavelet transform으로 묘사 될 수 있다.
+<br>
+$$I(\mathbf{x}, k) = \Sigma_{\mathbf{x'}}i(\mathbf{x'})h_{k}(\mathbf{x} - \mathbf{x'})$$
+
+<br>
+$h_{k}$ 는  
