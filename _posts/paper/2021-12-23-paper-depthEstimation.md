@@ -11,12 +11,13 @@ categories:
 # Depth estimation from image structure 논문 리딩
 
 ## 1. Introduction
-<figure style="display:block; text-align:center;">
-  <img src="/assets/img/etc/graduation01.gif "margin:0px auto">
-  <figcaption style="text-align:center; font-size:15px; color:#808080">
-    figure 1
-  </figcaption>
-</figure>
+![figure02](/assets/img/etc/graduation01.gif){: width="600" height="370"}
+<p align="center">
+<img src="/assets/img/etc/graduation01.gif"  width="600" height="370">
+<br> fig. 1
+</p>
+
+출처: https://cutemoomin.tistory.com/entry/Readme-파일에-이미지-넣기-마크다운-이미지 [무민은귀여워]
 그림에서 볼 수 있듯이 단안 이미지(monocular image)에서 절대적인 깊이를 판단하는 것 근본적으로 문제가 존재합니다. 스테레오 이미지, 모션, 디포커스와 관련된 정보가 없다.
 위 사진의 fig.1(a)와 같이 3개의 정육면체 사물은 같은 크기로 인식된다.
 <br><br>
@@ -48,18 +49,16 @@ $$i(\mathbf{x})$$는 쉽게 말해 이미지의 pixel 값이다. 또한 $$j = \s
 따라서 $$[-0.5, 0.5] \times [-0.5, 0.5]$$의 범위를 가진다는 것을 알 수 있다.
 $$h(x)$$는 boundary effect를 줄이기 위한 circular window라고 서술되어 있다. (추가적인 검색 필요)
 
-우리는 이 수식을 통해 결국 이미지의 amplitude spectrum(진폭 스펙트럼)을 구현 해야 한다.
-
+우리는 이 수식을 통해 결국 이미지의 amplitude spectrum(진폭 스펙트럼)을 구현 해야 한다.<br>
 amplitude spectrum은 푸리에 트랜스폼의 크기이다: $$A(\mathbf{f}) = |I(\mathbf{f})|$$
 
 해당 식을 통해 amplitude spectrum을 구했다면, 우리는 amplitude spectrum의 평균 값을 통해 이미지의 스펙트럼 시그니처(S)를 정의 할 수 있다.
-<figure style="display:block; text-align:center;">
-  <img src="/assets/img/etc/graduation02.gif "margin:0px auto">
-  <figcaption style="text-align:center; font-size:15px; color:#808080">
-    figure 2
-  </figcaption>
-</figure>
 
+![figure02](/assets/img/etc/graduation02.gif){: width="600" height="370"}
+<p align="center">
+<img src="/assets/img/etc/graduation02.gif"  width="600" height="370">
+<br> fig. 2
+</p>
 fig. 2는 6000개의 이미지로부터 수집한 스펙트럼 시그니처의 50%, 80% contour plot이다.
 각각 인공 구조물, 자연 구조물에 대한 plot으로 각각이 다른 특성을 보이고 있다.
 
