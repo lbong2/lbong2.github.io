@@ -11,13 +11,12 @@ categories:
 # Depth estimation from image structure 논문 리딩
 
 ## 1. Introduction
-![figure02](/assets/img/etc/graduation01.gif){: width="600" height="370"}
+
 <p align="center">
 <img src="/assets/img/etc/graduation01.gif"  width="600" height="370">
 <br> fig. 1
 </p>
 
-출처: https://cutemoomin.tistory.com/entry/Readme-파일에-이미지-넣기-마크다운-이미지 [무민은귀여워]
 그림에서 볼 수 있듯이 단안 이미지(monocular image)에서 절대적인 깊이를 판단하는 것 근본적으로 문제가 존재합니다. 스테레오 이미지, 모션, 디포커스와 관련된 정보가 없다.
 위 사진의 fig.1(a)와 같이 3개의 정육면체 사물은 같은 크기로 인식된다.
 <br><br>
@@ -54,7 +53,6 @@ amplitude spectrum은 푸리에 트랜스폼의 크기이다: $$A(\mathbf{f}) = 
 
 해당 식을 통해 amplitude spectrum을 구했다면, 우리는 amplitude spectrum의 평균 값을 통해 이미지의 스펙트럼 시그니처(S)를 정의 할 수 있다.
 
-![figure02](/assets/img/etc/graduation02.gif){: width="600" height="370"}
 <p align="center">
 <img src="/assets/img/etc/graduation02.gif"  width="600" height="370">
 <br> fig. 2
