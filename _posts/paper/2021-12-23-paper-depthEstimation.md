@@ -12,7 +12,7 @@ categories:
 
 ## 1. Introduction
 <figure style="display:block; text-align:center;">
-  <img src="https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/34/22191/1033214/1033214-fig-1-source-large.gif "margin:0px auto">
+  <img src="/assets/img/etc/graduation01.gif "margin:0px auto">
   <figcaption style="text-align:center; font-size:15px; color:#808080">
     figure 1
   </figcaption>
@@ -40,20 +40,20 @@ $$
 I(\mathbf{f}) = \Sigma_{x=0}^{N-1}\Sigma_{y=0}^{N-1}i(\mathbf{x})h(\mathbf{x})e^{-j2\pi<\mathbf{f}, \mathbf{x}>}
 $$
 
-$i(\mathbf{x})$는 쉽게 말해 이미지의 pixel 값이다. 또한 $j$ = $\sqrt -1$
+$$i(\mathbf{x})$$는 쉽게 말해 이미지의 pixel 값이다. 또한 $$j = \sqrt -1$$
 
-공간 주파수 $\mathbf{f}$ = $(fx, fy) \in [-0.5, 0.5] \times [-0.5, 0.5]$
-다시말해 $\mathbf{f}$는 이미지의 pixel 좌표 $(x, y)$를 $(\frac{x - W / 2}{W}, \frac{y - H / 2}{H})$형태로 변환한 값이며
-따라서 $[-0.5, 0.5] \times [-0.5, 0.5]$의 범위를 가진다는 것을 알 수 있다.
-$h(x)$는 boundary effect를 줄이기 위한 circular window라고 서술되어 있다. (추가적인 검색 필요)
+공간 주파수 $$\mathbf{f} = (fx, fy) \in [-0.5, 0.5] \times [-0.5, 0.5]$$
+다시말해 $$\mathbf{f}$$는 이미지의 pixel 좌표 $$(x, y)$$를 $$(\frac{x - W / 2}{W}, \frac{y - H / 2}{H})$$형태로 변환한 값이며
+따라서 $$[-0.5, 0.5] \times [-0.5, 0.5]$$의 범위를 가진다는 것을 알 수 있다.
+$$h(x)$$는 boundary effect를 줄이기 위한 circular window라고 서술되어 있다. (추가적인 검색 필요)
 
 우리는 이 수식을 통해 결국 이미지의 amplitude spectrum(진폭 스펙트럼)을 구현 해야 한다.
 
-amplitude spectrum은 푸리에 트랜스폼의 크기이다: $A(\mathbf{f}) = |I(\mathbf{f})|$
+amplitude spectrum은 푸리에 트랜스폼의 크기이다: $$A(\mathbf{f}) = |I(\mathbf{f})|$$
 
 해당 식을 통해 amplitude spectrum을 구했다면, 우리는 amplitude spectrum의 평균 값을 통해 이미지의 스펙트럼 시그니처(S)를 정의 할 수 있다.
 <figure style="display:block; text-align:center;">
-  <img src="https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/34/22191/1033214/1033214-fig-3-source-large.gif "margin:0px auto">
+  <img src="/assets/img/etc/graduation02.gif "margin:0px auto">
   <figcaption style="text-align:center; font-size:15px; color:#808080">
     figure 2
   </figcaption>
