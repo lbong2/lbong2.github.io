@@ -36,6 +36,7 @@ __해당 논문에서는 이미지를 영역 또는 물체로 구분지어 분�
 ## 2. Image Structure
 
 __Discrete Fourier Transform:__
+<br>
 $$
 I(\mathbf{f}) = \Sigma_{x=0}^{N-1}\Sigma_{y=0}^{N-1}i(\mathbf{x})h(\mathbf{x})e^{-j2\pi<\mathbf{f}, \mathbf{x}>}
 $$
