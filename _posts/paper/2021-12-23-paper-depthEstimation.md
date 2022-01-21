@@ -243,7 +243,14 @@ $$A_{i, j}^{2}= \Sigma_{\mathbf{x}}|I(\mathbf{x}, i)||I(\mathbf{x}, j)|$$
 
 
 $$A_M^2({\bf{x}}, k) = \left\{ | I({\bf{x}}, k) |^2 \downarrow M \right\}$$
-
+---
+---
+---
+이후 내용 추후 수정 (단순 번역본임.)
+---
+---
+---
+ 
 ## 5. Probability Model
 
 $$\hat{D}= E \left[ D \, | \, {\bf{v}}\right]=\int_{-\infty}^\infty \, D \, f_{D|v}(D \, | \, {\bf{v}})$$
