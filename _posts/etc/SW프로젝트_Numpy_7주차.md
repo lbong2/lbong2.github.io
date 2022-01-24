@@ -1,0 +1,475 @@
+```python
+import numpy as np
+A = np.array( [[True, True], 
+               [True, False], 
+               [True, False]] )
+np.all(A, axis=0), np.all(A, axis=1) # axis에 따라 AND연산을 진행한다. 
+```
+
+
+
+
+    (array([ True, False]), array([ True, False, False]))
+
+
+
+
+```python
+A = np.array( [[True, True], 
+               [True, False],
+               [True, False]])
+np.any(A, axis=0), np.any(A, axis=1) # axis에 따라 OR연산을 진행한다. 
+```
+
+
+
+
+    (array([ True,  True]), array([ True,  True,  True]))
+
+
+
+
+```python
+A = np.array([[3,0,0], 
+              [0,4,0], 
+              [5,6,0]])
+np.nonzero(A) # 0이아닌 element의 idx를 반환한다. 
+B = A[np.nonzero(A)] # 해당 형식을 사용하면 B에 element의 index를 정확하게 저장할 수 있다. 
+np.transpose(np.nonzero(A))
+```
+
+
+
+
+    array([[0, 0],
+           [1, 1],
+           [2, 0],
+           [2, 1]], dtype=int64)
+
+
+
+
+```python
+a = np.arange(10) # 0~9 행렬 
+np.where(a < 5, a, 10*a) # 행렬 내 요소가 a < 5일때 a, 거짓이라면 *10을 진행한다. 
+```
+
+
+
+
+    array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
+
+
+
+
+```python
+A = np.arange(6).reshape(2, 3) + 10 # 0~5 2x3행렬 각요소에 +10
+A, np.argmax(A), np.argmax(A, axis=0), np.argmax(A, axis=1) # axis에 따라 axis방향 최대값을 출력한다. 
+```
+
+
+
+
+    (array([[10, 11, 12],
+            [13, 14, 15]]),
+     5,
+     array([1, 1, 1], dtype=int64),
+     array([2, 2], dtype=int64))
+
+
+
+
+```python
+A = np.arange(6).reshape(2, 3) + 10 # 0~5 2x3행렬 각요소에 +10
+A, np.argmin(A), np.argmin(A, axis=0), np.argmin(A, axis=1) # axis에 따라 axis방향 최소값을 출력한다.
+```
+
+
+
+
+    (array([[10, 11, 12],
+            [13, 14, 15]]),
+     0,
+     array([0, 0, 0], dtype=int64),
+     array([0, 0], dtype=int64))
+
+
+
+
+```python
+x = np.array( [3, 1, 2] )
+y = np.argsort(x) # axis에 따른 정렬을 시행한다. kind매개변수를 추가하면 정렬알고리즘 종류를 선택할 수 있다. 
+x, y, x[y] # 해당 함수는 index를 반환하므로 x[y]와 같은 형태로 출력하면 정렬된 행렬을 확인할 수 있다. 
+```
+
+
+
+
+    (array([3, 1, 2]), array([1, 2, 0], dtype=int64), array([1, 2, 3]))
+
+
+
+
+```python
+A = np.random.randint(10, size=(2,3)) # 2x3행렬 0~10사이의 랜덤 정수 
+A, np.max(A), np.max(A, axis=0), np.max(A, axis=1) # axis방향에 따른 max값을 반환한다. 
+```
+
+
+
+
+    (array([[1, 6, 7],
+            [2, 0, 6]]),
+     7,
+     array([2, 6, 7]),
+     array([7, 6]))
+
+
+
+
+```python
+A = np.random.randint(10, size=(2,3)) # 2x3행렬 0~10사이의 랜덤 정수
+A, np.min(A), np.min(A, axis=0), np.min(A, axis=1) # axis방향에 따른 max값을 반환한다.
+```
+
+
+
+
+    (array([[1, 8, 6],
+            [8, 4, 8]]),
+     1,
+     array([1, 4, 6]),
+     array([1, 4]))
+
+
+
+
+```python
+A = np.random.randint(10, size=(2,3)) # 2x3행렬 0~10사이의 랜덤 정수
+A, np.ptp(A), np.ptp(A, axis=0), np.ptp(A, axis=1) # peak-to-peak axis에 따른 최대값-최소값을 반환한다. 
+```
+
+
+
+
+    (array([[4, 2, 7],
+            [6, 1, 0]]),
+     7,
+     array([2, 1, 7]),
+     array([5, 6]))
+
+
+
+
+```python
+np.searchsorted( [1, 2, 3, 4, 5], 3) # 정렬된 행렬을 위해 매개변수의 값이 몇번째 인덱스의 왼쪽에 들어가야하는지 반환
+np.searchsorted( [1, 2, 3, 4, 5], 3, side='right') # (default = left) side를 right로 설정할 수 있다. 
+```
+
+
+
+
+    3
+
+
+
+
+```python
+x = np.array( [3, 1, 2] )
+x, x[np.argsort(x)], np.sort(x) # axis에 따라 정렬을 시행한다. index가 아닌 행렬을 반환한다. 
+```
+
+
+
+
+    (array([3, 1, 2]), array([1, 2, 3]), array([1, 2, 3]))
+
+
+
+
+```python
+choices = [[ 0, 1, 2, 3], 
+           [10, 11, 12, 13], 
+           [20, 21, 22, 23], 
+           [30, 31, 32, 33]]
+np.choose([2, 3, 1, 0], choices) # 매개변수로 index행렬을 입력하면 ex)(2,0) (3,1) (1,2) (0,3)의 element를 반환한다. 
+```
+
+
+
+
+    array([20, 31, 12,  3])
+
+
+
+
+```python
+A = np.array([[1,2], 
+              [3,4],
+              [5,6]])
+np.compress([False, True, True], A, axis=0), np.compress([False, True], A, axis=1)
+# 조건과 axis에 따라 행렬을 재구성한다. 
+```
+
+
+
+
+    (array([[3, 4],
+            [5, 6]]),
+     array([[2],
+            [4],
+            [6]]))
+
+
+
+
+```python
+A = np.random.randint(3, size=(2,3)) + 1 # 0~2 랜덤 정수 2x3행렬 각요소에 +1
+
+A, np.cumprod(A, axis=0) ,np.cumprod(A, axis=1) # axis에 따라 누적곱을 반환한다.
+```
+
+
+
+
+    (array([[2, 1, 1],
+            [3, 3, 3]]),
+     array([[2, 1, 1],
+            [6, 3, 3]], dtype=int32),
+     array([[ 2,  2,  2],
+            [ 3,  9, 27]], dtype=int32))
+
+
+
+
+```python
+a = np.array([1,2,3])
+b = np.array([0,1,0])
+np.inner(a, b), a*b, np.cumsum(a*b) #두 행렬에 대해 내적을 진행한다. 
+```
+
+
+
+
+    (2, array([0, 2, 0]), array([0, 2, 2], dtype=int32))
+
+
+
+
+```python
+A = np.random.randint(10, size=(2,3))
+np.cumsum(A), np.cumsum(A, axis = 0), np.cumsum(A, axis = 1) # axis에 따라 누적합을 반환한다. 
+```
+
+
+
+
+    (array([ 1,  4, 10, 17, 20, 21], dtype=int32),
+     array([[1, 3, 6],
+            [8, 6, 7]], dtype=int32),
+     array([[ 1,  4, 10],
+            [ 7, 10, 11]], dtype=int32))
+
+
+
+
+```python
+a = np.array([1, 2]) 
+a.fill(0) # 행렬의 요소를 0으로 초기화한다. 
+a
+```
+
+
+
+
+    array([0, 0])
+
+
+
+
+```python
+a = np.array( [1+2j, 3+4j, 5+6j]) 
+a. real, a.imag # complex 행렬에 대해 각각 실수부, 허수부를 반환한다. 
+```
+
+
+
+
+    (array([1., 3., 5.]), array([2., 4., 6.]))
+
+
+
+
+```python
+X = np.array([[1,2],[3,4]]) 
+X, np.prod(X), np.prod(X, axis=0), np.prod(X, axis=1) # axis에 따라 누적곱을 반환한다. 
+```
+
+
+
+
+    (array([[1, 2],
+            [3, 4]]),
+     24,
+     array([3, 8]),
+     array([ 2, 12]))
+
+
+
+
+```python
+A = np.array([[1,2],[3,4]])
+np.sum(A), np.sum(A, axis=0), np.sum(A, axis=1) # axis에 따라 element의 합을 반환한다. 
+```
+
+
+
+
+    (10, array([4, 6]), array([3, 7]))
+
+
+
+
+```python
+a = np.arange(5)
+np.put(a, [0,2], [-44, -55]) # put(arr1, index, arr2) 형태로 arr1의 index에 arr2의 값을 넣는다. 
+a
+```
+
+
+
+
+    array([-44,   1, -55,   3,   4])
+
+
+
+
+```python
+X = np.arange(6).reshape(2,3)
+np.putmask(X, X>2, X**2) # 행렬 내 조건에 부합하는 element를 연산과정을 거친 후 반환한다. 
+X
+```
+
+
+
+
+    array([[ 0,  1,  2],
+           [ 9, 16, 25]])
+
+
+
+
+```python
+A = np.random.randint(10, size=(2,4)) 
+print(np.mean(A), np.mean(A, axis=0), np.mean(A, axis=1), "\n") # axis에 따른 행렬의 기대값
+print(np.var(A), np.var(A, axis=0), np.var(A, axis=1), "\n") # axis에 따른 행렬의 분산
+print(np.std(A), np.std(A, axis=0), np.std(A, axis=1)) # axis에 따른 행렬의 표준편차
+```
+
+    2.625 [1.  4.5 2.  3. ] [3.25 2.  ] 
+    
+    4.984375 [ 0.   12.25  0.    1.  ] [7.6875 1.5   ] 
+    
+    2.2325713874364688 [0.  3.5 0.  1. ] [2.77263413 1.22474487]
+    
+
+
+```python
+a = np.random.rand(1, 2)
+b = np.random.rand(1, 2)
+np.cov(a, b) # 두 행렬에 대한 공분산(covariance) 
+```
+
+
+
+
+    array([[ 0.10798792, -0.02049539],
+           [-0.02049539,  0.00388989]])
+
+
+
+
+```python
+x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+np.cross(x, y) # 두 행렬에 대한 Cross product 'x'
+```
+
+
+
+
+    array([-3,  6, -3])
+
+
+
+
+```python
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[4, 5], [6, 7]])
+np.dot(A, B), A @ B # 두 행렬에 대한 행렬 곱
+```
+
+
+
+
+    (array([[16, 19],
+            [36, 43]]),
+     array([[16, 19],
+            [36, 43]]))
+
+
+
+
+```python
+u = np.array([1, 2, 3]).T
+v = np.array([4, 5, 6]).T # transpose
+np.outer(u, v) # 2개 벡터 크기가 m x 1, n x 1인 벡터들을 m x n크기의 행렬로 반환 
+```
+
+
+
+
+    array([[ 4,  5,  6],
+           [ 8, 10, 12],
+           [12, 15, 18]])
+
+
+
+
+```python
+A = np.array([[3,4,3], [1,2,3], [4,2,1]])
+U, S, V = np.linalg.svd(A) # 배열을 U, S, V로 반환 
+A_remake = (U @ np.diag(S) @ V) 
+A_remake
+```
+
+
+
+
+    array([[3., 4., 3.],
+           [1., 2., 3.],
+           [4., 2., 1.]])
+
+
+
+
+```python
+a = np.array([1+2j, 3+4j])
+b = np.array([5+6j, 7+8j])
+c = np.array([[1,4], [5,6]])
+d = np.array([[4,1], [2,2]])
+np.vdot(a, b), np.vdot(b, a), np.vdot(c, d), np.vdot(d, c), (1*4 + 4*1 + 5*2 + 6*2)
+# complex일때 행렬 곱 complex일때 당연히 순서에 따라 방향이 달라진다. 
+```
+
+
+
+
+    ((70-8j), (70+8j), 30, 30, 30)
+
+
+
+
+```python
+
+```

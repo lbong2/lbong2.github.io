@@ -1,0 +1,665 @@
+```python
+import numpy as np
+np.arange(3, 7, 2, dtype=float) # 인터벌에 따른 배열 선언
+```
+
+
+
+
+    array([3., 5.])
+
+
+
+
+```python
+np.array([1, 2, 3], dtype=complex) # array 생성 
+```
+
+
+
+
+    array([1.+0.j, 2.+0.j, 3.+0.j])
+
+
+
+
+```python
+x = np.array( [1, 2, 3] )
+y = np.copy(x) # 행렬 복사 (깊은 복사)
+y[1] = 10
+y, x
+```
+
+
+
+
+    (array([ 1, 10,  3]), array([1, 2, 3]))
+
+
+
+
+```python
+np.empty( [2, 2] ) # shape 모양 빈 행렬 선언(쓰레기 값)
+```
+
+
+
+
+    array([[2.12199579e-314, 1.14587773e-311],
+           [4.54540394e-321, 1.37645379e-309]])
+
+
+
+
+```python
+A = ( [1, 2, 3], [4, 5, 6] ) # A is array-like
+np.empty_like(A) # 매개변수와 같은 scale 의 빈 행렬 선언
+```
+
+
+
+
+    array([[         0, 1072693248,          0],
+           [1073741824,          0, 1074266112]])
+
+
+
+
+```python
+np.eye(2, dtype=int) # 매개변수 크기의 단위 행렬 선언 
+```
+
+
+
+
+    array([[1, 0],
+           [0, 1]])
+
+
+
+
+```python
+dt = np.dtype([('time', [('min', np.int64), ('sec', np.int64)]), ('temp', float)]) # dtype 설정 
+x = np.zeros( (1,), dtype=dt)
+x['time']['min'] = 10; x['temp'] = 98.25
+import tempfile # 임시 파일, 디렉토리 생성 가능 
+fname = tempfile.mkstemp()[1]
+x.tofile(fname)
+np.fromfile(fname, dtype=dt) # 파일 내 정보로 array 생성 
+```
+
+
+
+
+    array([((10, 0), 98.25)],
+          dtype=[('time', [('min', '<i8'), ('sec', '<i8')]), ('temp', '<f8')])
+
+
+
+
+```python
+ np.fromfunction(lambda i, j:i==j, (3, 3), dtype=int) # 함수 정보로 행렬선언 
+```
+
+
+
+
+    array([[ True, False, False],
+           [False,  True, False],
+           [False, False,  True]])
+
+
+
+
+```python
+ np.identity(3) # 매개변수 크기의 단위 행렬 선언 
+```
+
+
+
+
+    array([[1., 0., 0.],
+           [0., 1., 0.],
+           [0., 0., 1.]])
+
+
+
+
+```python
+import matplotlib.pyplot as plt
+>>> N = 8
+>>> y = np.zeros(N)
+>>> x1 = np.linspace(0, 10, N, endpoint=True) # start -> stop 까지의 N개의 point를 갖는 행렬 선언 
+>>> x1
+>>> x2 = np.linspace(0, 10, N, endpoint=False) # 위의 경우 stop의 값을 포함하지 않음 
+>>> x2
+>>> plt.plot(x1, y, 'o')
+>>> plt.plot(x2, y + 0.5, 'o')
+>>> plt.ylim([-0.5, 1]) # plot의 가시성을 위해 범위 설정 
+>>> plt.show()
+```
+
+
+    
+![png](output_9_0.png)
+    
+
+
+
+```python
+import matplotlib.pyplot as plt
+>>> N = 10
+>>> x1 = np.logspace(0.1, 1, N, endpoint=True) # start -> stop 까지 N개의 log scale 행렬 선언 
+>>> x1
+>>> x2 = np.logspace(0.1, 1, N, endpoint=False) # stop값을 포함하지 않음 
+>>> x2
+>>> y = np.zeros(N)
+>>> plt.plot(x1, y, 'o')
+>>> plt.plot(x2, y + 0.5, 'o')
+>>> plt.ylim( [-0.5, 1] )
+>>> plt.show( ) # plot 표시 
+```
+
+
+    
+![png](output_10_0.png)
+    
+
+
+
+```python
+np.mgrid[0:5,0:5] # dense multi-dimensional <-> open multi-dimensional 
+```
+
+
+
+
+    array([[[0, 0, 0, 0, 0],
+            [1, 1, 1, 1, 1],
+            [2, 2, 2, 2, 2],
+            [3, 3, 3, 3, 3],
+            [4, 4, 4, 4, 4]],
+    
+           [[0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 4]]])
+
+
+
+
+```python
+from numpy import ogrid
+>>> ogrid[0:5, 0:5] # open multi-dimensional
+```
+
+
+
+
+    [array([[0],
+            [1],
+            [2],
+            [3],
+            [4]]),
+     array([[0, 1, 2, 3, 4]])]
+
+
+
+
+```python
+np.ones( (2, 3), dtype=int) # 1로 채운 매개변수 scale 행렬 선언
+```
+
+
+
+
+    array([[1, 1, 1],
+           [1, 1, 1]])
+
+
+
+
+```python
+ X = np.arange(6).reshape(2, 3)
+>>> np.ones_like(X) # 매개 변수 행렬의 scale과 같은 scale의 행렬 선언 
+```
+
+
+
+
+    array([[1, 1, 1],
+           [1, 1, 1]])
+
+
+
+
+```python
+np.r_[np.array([1,2]), 0, np.array([3,4])] # 행렬 slice후 수평 결합
+```
+
+
+
+
+    array([1, 2, 0, 3, 4])
+
+
+
+
+```python
+ np.zeros((2, 3), dtype=float) # 0으로 채운 배열 선언 
+```
+
+
+
+
+    array([[0., 0., 0.],
+           [0., 0., 0.]])
+
+
+
+
+```python
+x = np.arange(6).reshape( (2,3) )
+>>> x
+>>> np.zeros_like(x) # 매개변수 scale의 0으로 채운 배열 선언 
+```
+
+
+
+
+    array([[0, 0, 0],
+           [0, 0, 0]])
+
+
+
+
+```python
+x = np.array( [1, 2, 2.5] )
+>>> x
+>>> x.astype(int) # 행렬 타입 변환 
+```
+
+
+
+
+    array([1, 2, 2])
+
+
+
+
+```python
+X = np.arange(1, 5).reshape( (2,2) )
+>>> X
+>>> Y = np.asmatrix(X) # 
+>>> Y
+>>> X[0,0] = 100
+>>> Y
+```
+
+
+
+
+    matrix([[100,   2],
+            [  3,   4]])
+
+
+
+
+```python
+x = np.arange(6).reshape( (2,3) )
+>>> x
+>>> np.atleast_1d(x)
+>>> np.atleast_2d(x)
+>>> np.atleast_3d(x) # 각각 1차원 2차원 3차원 행렬 scale 변경 
+```
+
+
+
+
+    array([[[0],
+            [1],
+            [2]],
+    
+           [[3],
+            [4],
+            [5]]])
+
+
+
+
+```python
+x = np.arange(8)
+>>> x
+>>> np.array_split(x, 3) # 행렬 분할 2번째 매개변수의 갯수로 
+>>> y = np.arange(9)
+>>> y
+>>> np.array_split(y, 4)
+```
+
+
+
+
+    [array([0, 1, 2]), array([3, 4]), array([5, 6]), array([7, 8])]
+
+
+
+
+```python
+a = np.array( [1, 2, 3] )
+>>> b = np.array( [4, 5, 6] )
+>>> a, b
+>>> np.column_stack( [a, b] ) # 두개의 행렬을 수평 방향으로 stack 
+```
+
+
+
+
+    array([[1, 4],
+           [2, 5],
+           [3, 6]])
+
+
+
+
+```python
+ A = np.array( [ [1,2], [3,4] ] )
+>>> b = np.array( [ [5,6] ] )
+>>> A, b
+>>> A.shape, b.shape
+>>> np.concatenate((A, b), axis=0) # axis에 따라 알맞는 방향으로 병합
+>>> np.concatenate((A, b.T), axis=1)
+>>> np.concatenate((A, b), axis=None)
+```
+
+
+
+
+    array([1, 2, 3, 4, 5, 6])
+
+
+
+
+```python
+ A = np.arange(4).reshape(2,2)
+>>> A
+>>> A.diagonal( ) # 주대각 성분 반환 
+>>> A.diagonal(1)
+```
+
+
+
+
+    array([1])
+
+
+
+
+```python
+a = np.array( (1, 2, 3) )
+>>> b = np.array( (4, 5, 6) )
+>>> a, b
+>>> np.dstack( (a, b) ) # depth wise stack  수직으로 세운 방향으로 수평 stack
+>>> c = np.dstack( (a,b) )
+c
+```
+
+
+
+
+    array([[[1, 4],
+            [2, 5],
+            [3, 6]]])
+
+
+
+
+```python
+ A = np.arange(16.0).reshape(2, 2, 4)
+>>> A
+>>> np.dsplit(A, 2) # A를 3번째 axis 기준 분할 개수만큼 분할 
+```
+
+
+
+
+    [array([[[ 0.,  1.],
+             [ 4.,  5.]],
+     
+            [[ 8.,  9.],
+             [12., 13.]]]),
+     array([[[ 2.,  3.],
+             [ 6.,  7.]],
+     
+            [[10., 11.],
+             [14., 15.]]])]
+
+
+
+
+```python
+X = np.arange(16.0).reshape(4, 4)
+>>> X
+>>> np.hsplit(X, 2) # X를 수평 방향 매개변수 만큼 분할 
+```
+
+
+
+
+    [array([[ 0.,  1.],
+            [ 4.,  5.],
+            [ 8.,  9.],
+            [12., 13.]]),
+     array([[ 2.,  3.],
+            [ 6.,  7.],
+            [10., 11.],
+            [14., 15.]])]
+
+
+
+
+```python
+a = np.array((1, 2, 3))
+>>> b = np.array((4, 5, 6))
+>>> a, b
+>>> np.hstack((a,b)) # 수평방향으로 stack 
+```
+
+
+
+
+    array([1, 2, 3, 4, 5, 6])
+
+
+
+
+```python
+X = np.arange(9).reshape( (3,3) )
+>>> X
+>>> X.item(3)
+>>> X.item((1,0)) # 매개변수 번째 요소 반환 
+```
+
+
+
+
+    3
+
+
+
+
+```python
+a = np.arange(3)
+>>> b = a[:, np.newaxis]
+>>> c = a[:, np.newaxis, np.newaxis] # 행렬 인덱싱에 유용, 해당 axis를 고정 시킴 (사용하지 않으면 compiler가 임시상태로 놔둠)
+>>> a, b, c
+>>> a.shape, b.shape, c.shape
+```
+
+
+
+
+    ((3,), (3, 1), (3, 1, 1))
+
+
+
+
+```python
+ X = np.array( [[1,2,3], [4,5,6]] )
+>>> y = np.ravel(X) # 수평 형태로 행렬 반환  
+>>> X.shape, y.shape
+```
+
+
+
+
+    ((2, 3), (6,))
+
+
+
+
+```python
+np.repeat(3, 4)
+>>> X = np.arange(4).reshape((2,2))
+>>> Y = np.repeat(X, 2) # X를 횟수만큼 반복한다. 
+>>> X, Y
+>>> Z = np.repeat(X, 2, axis=1) # axis에 따라 수평방향 수직방향으로 반복된다. 
+>>> Z
+```
+
+
+
+
+    array([[0, 0, 1, 1],
+           [2, 2, 3, 3]])
+
+
+
+
+```python
+A = np.arange(6).reshape((3,2)) # 행렬을 매개변수 scale 로 변환 (shallo copy)
+>>> A
+```
+
+
+
+
+    array([[0, 1],
+           [2, 3],
+           [4, 5]])
+
+
+
+
+```python
+A = np.array( [[0,1],[2,3]] )
+B = np.resize(A, (2, 3) ) #  행렬을 매개변수 scale로 변환 (deep copy)
+A, B
+```
+
+
+
+
+    (array([[0, 1],
+            [2, 3]]),
+     array([[0, 1, 2],
+            [3, 0, 1]]))
+
+
+
+
+```python
+X = np.array( [[[0], [1], [2]]] )
+>>> Y = np.squeeze(X, axis=0) # 특정 axis를 삭제 (여기는 0)
+>>> Z = np.squeeze(X, axis=2)
+>>> X, X.shape
+>>> Y, Y.shape
+>>> Z, Z.shape
+```
+
+
+
+
+    (array([[0, 1, 2]]), (1, 3))
+
+
+
+
+```python
+X = np.arange(8).reshape( (2, 2, 2) )
+Y = np.swapaxes(X, 0, 2) # 2, 3번째 매개변수 axis를 교환한다. 
+Y
+```
+
+
+
+
+    array([[[0, 4],
+            [2, 6]],
+    
+           [[1, 5],
+            [3, 7]]])
+
+
+
+
+```python
+x = np.array( [1, 2, 2.5] )
+>>> x
+
+>>> x.astype(int) # 행렬 타입 변환 
+```
+
+
+
+
+    array([1, 2, 2])
+
+
+
+
+```python
+X = np.arange(4).reshape((2,2))
+>>> X
+>>> np.transpose(X) # 행렬을 transpose함 
+```
+
+
+
+
+    array([[0, 2],
+           [1, 3]])
+
+
+
+
+```python
+A = np.arange(16).reshape(4,4)
+>>> A
+>>> np.vsplit(A, 2) # 행렬 수직방향 분할 
+```
+
+
+
+
+    [array([[0, 1, 2, 3],
+            [4, 5, 6, 7]]),
+     array([[ 8,  9, 10, 11],
+            [12, 13, 14, 15]])]
+
+
+
+
+```python
+a = np.array([1, 2, 3])
+>>> b = np.array([4, 5, 6])
+>>> np.vstack((a,b)) # 행렬 수직방향 stack
+```
+
+
+
+
+    array([[1, 2, 3],
+           [4, 5, 6]])
+
+
