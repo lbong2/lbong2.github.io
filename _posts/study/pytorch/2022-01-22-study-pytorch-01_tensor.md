@@ -13,11 +13,11 @@ categories:
 
 Pytorch는 공식 커뮤니티에 튜토리얼이 나와있다. 순서대로 따라가보려 한다.
 
-환경은 아나콘다 가상환경 Python=3.6 버전, Cuda 11.3버전이다.
+환경은 아나콘다 가상환경 python=3.6 버전, Cuda 11.3버전이다.
 
 ### import
 
-~~~Python
+~~~python
 import torch
 import numpy as np
 ~~~
@@ -26,7 +26,7 @@ import 해준다.
 
 ### 1. 데이터로부터 직접 생성하기
 
-~~~Python
+~~~python
 print("1. 데이터로부터 직접 생성하기")
 data = [[1, 2],[3, 4]]
 x_data = torch.tensor(data)
@@ -44,7 +44,7 @@ tensor([[1, 2],
 
 ### 2. NumPy 배열로부터 생성하기
 
-~~~Python
+~~~python
 print("\n2. NumPy 배열로부터 생성하기")
 np_array = np.array(data)
 x_np = torch.from_numpy(np_array)
@@ -61,7 +61,7 @@ tensor([[1, 2],
 위의 코드와는 약간 다른 부분이 tensor가 데이터 타입을 명시하면서 출력된다.
 
 ### 3. 다른 텐서로부터 생성하기
-~~~Python
+~~~python
 print("\n3. 다른 텐서로부터 생성하기")
 x_ones = torch.ones_like(x_data) # x_data의 속성을 유지합니다.
 print(f"Ones Tensor: \n {x_ones} \n")
@@ -84,7 +84,7 @@ ones_like()라는 함수를 사용하였다. numpy의 \~~_like와 같은 함수�
 rand_like라는 함수는 C/C++을 주력으로 써왔던 사람으로써 상당히 매력적인것 같다. 한줄로 rand라니.. 거기다 time같은 종속인자도 필요없다니...
 
 ### 4. 무작위(random) 또는 상수(constant) 값을 사용하기
-~~~Python
+~~~python
 print("\n4. 무작위(random) 또는 상수(constant) 값을 사용하기")
 shape = (2,3,)
 rand_tensor = torch.rand(shape)
@@ -112,7 +112,7 @@ Zeros Tensor:
 
 먼저 shape를 2, 3으로 정한 모습이고 shape형태로 rand, ones, zeros를 실행한 모습이다. 함수 이름과 똑같은 기능을 보여준다.
 ### 5. 텐서의 속성(Attribute)
-~~~Python
+~~~python
 print("\n5. 텐서의 속성(Attribute)")
 tensor = torch.rand(3,4)
 print(f"Shape of tensor: {tensor.shape}")
@@ -128,7 +128,7 @@ Device tensor is stored on: cpu
 텐서의 속성을 출력한 부분이다. 현재 Device tensor가 cpu에 있다고 나온다.
 
 ### 6. 텐서 연산(Operation)
-~~~Python
+~~~python
 print("\n6. 텐서 연산(Operation)")
 if torch.cuda.is_available():
     tensor = tensor.to('cuda')
@@ -139,7 +139,7 @@ GPU가 존재한다면 Tensor가 cuda로 이동한다.
 Device tensor is stored on: cuda:0
 ~~~
 ### 7. NumPy식의 표준 인덱싱과 슬라이싱
-~~~Python
+~~~python
 print("\n7. NumPy식의 표준 인덱싱과 슬라이싱")
 tensor = torch.ones(4, 4)
 print('First row: ', tensor[0])
@@ -162,7 +162,7 @@ tensor([[1., 0., 1., 1.],
 [..., ~] 이거도 파이썬 기본 자료형에서 썼었나? 아닌거 같은데.. 보통 (:)이걸 많이 썼던거 같다.
 
 ### 8. 텐서 합치기
-~~~Python
+~~~python
 print("\n8. 텐서 합치기")
 t1 = torch.cat([tensor, tensor, tensor], dim=1)
 t2 = torch.stack([tensor, tensor, tensor], dim=1)
@@ -194,7 +194,7 @@ tensor([[[1., 0., 1., 1.],
 이것 또한 numpy에서 쓰던 dstack, column_stack, hstack 등등이 생각나게 만드는 함수다.
 
 ### 9. 산술 연산(Arithmetic operations)
-~~~Python
+~~~python
 print("\n9. 산술 연산(Arithmetic operations)")
 
 y1 = tensor @ tensor.T
@@ -225,7 +225,7 @@ tensor([[1., 0., 1., 1.],
 먼저 tensor.T를 통해 tensor의 transpose를 구할 수 있는듯 하다. 여기서 matmul은 행렬곱을 의미하고 mul은 tensor 요소간 곱을 구할 수 있다.
 
 ### 10. 단일-요소(single-element) 텐서
-~~~Python
+~~~python
 print("\n10. 단일-요소(single-element) 텐서")
 agg = tensor.sum()
 agg_item = agg.item()
@@ -239,7 +239,7 @@ print(agg_item, type(agg_item))
 agg.item()은 agg에서 값만 가져온다.
 
 ### 11. 바꿔치기(in-place) 연산
-~~~Python
+~~~python
 print("\n11. 바꿔치기(in-place) 연산")
 print(tensor, "\n")
 tensor.add_(5)
@@ -260,7 +260,7 @@ tensor([[6., 5., 6., 6.],
 바꿔치기 연산은 앞으로 연산과정에서 도함수 계산에 별로 안좋을 수 있으므로 권장하지 않는다고 나와있다.
 
 ### 12. 텐서를 NumPy 배열로 변환하기
-~~~Python
+~~~python
 print("\n12. 텐서를 NumPy 배열로 변환하기")
 t = torch.ones(5)
 print(f"t: {t}")
@@ -272,7 +272,7 @@ print(f"t: {t}")
 print(f"n: {n}")
 ~~~
 ### 13. NumPy 배열을 텐서로 변환하기
-~~~Python
+~~~python
 print("\n13. NumPy 배열을 텐서로 변환하기")
 n = np.ones(5)
 t = torch.from_numpy(n)
