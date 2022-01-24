@@ -8,6 +8,8 @@ categories:
  - study
  - pytorch
 ---
+* toc
+{:toc .large-only}
 
 # Pytorch Tutorial_01. Tensor
 
