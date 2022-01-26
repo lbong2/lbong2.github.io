@@ -20,7 +20,7 @@ url:                   https://lbong2.github.io
 lang:                  en-US, ko-KR
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 CV 개발자 블로그
+title:                 CV 개발자 호소인
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
