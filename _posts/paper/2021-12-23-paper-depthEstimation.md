@@ -8,6 +8,9 @@ categories:
  - paper
 ---
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+     crossorigin="anonymous"></script>
+     
 # Depth estimation from image structure 논문 리딩
 
 * toc
@@ -250,7 +253,7 @@ $$A_M^2({\bf{x}}, k) = \left\{ | I({\bf{x}}, k) |^2 \downarrow M \right\}$$
 ---
 ---
 ---
- 
+
 ## 5. Probability Model
 
 $$\hat{D}= E \left[ D \, | \, {\bf{v}}\right]=\int_{-\infty}^\infty \, D \, f_{D|v}(D \, | \, {\bf{v}})$$

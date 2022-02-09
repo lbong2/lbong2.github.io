@@ -9,6 +9,9 @@ categories:
  - opencv
 ---
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+     crossorigin="anonymous"></script>
+     
 ## OpenCV Rotate함수 직접 구현하기
 
 #### 1. Code

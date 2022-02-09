@@ -8,6 +8,9 @@ categories:
   - project
 ---
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+     crossorigin="anonymous"></script>
+     
 # Term project - LineTracer with OpenCV
 
 Github: <https://github.com/lbong2/LineTracer_proj>

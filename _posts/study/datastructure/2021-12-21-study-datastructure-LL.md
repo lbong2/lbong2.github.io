@@ -8,6 +8,10 @@ categories:
  - study
  - datastructure
 ---
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+     crossorigin="anonymous"></script>
+     
 # 00. 자료구조_Linked-List
 
 * toc
@@ -85,4 +89,4 @@ node* insert_node(int t, int k)
 
 Tree구조, stack, queue 모든 자료 구조형에서 기본이 되는 linked-list,
 
-간단하게 짚고 넘어감. 
+간단하게 짚고 넘어감.

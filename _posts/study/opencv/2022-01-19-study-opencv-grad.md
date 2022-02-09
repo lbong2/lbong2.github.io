@@ -9,6 +9,9 @@ categories:
  - opencv
 ---
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+     crossorigin="anonymous"></script>
+     
 # Image 각 방향 Gradient 구하기
 
 언뜻보면 연속적으로 보이는 사진도 픽셀값으로 이루어져 있다.

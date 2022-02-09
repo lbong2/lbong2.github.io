@@ -9,6 +9,9 @@ categories:
  - datastructure
 ---
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+     crossorigin="anonymous"></script>
+     
 # 02. 자료구조_Queue
 
 * toc
