@@ -21,11 +21,11 @@
     </h2>
     <!--카테고리-->
     <div class="post-date">
-      {% assign category_start     = "카테고리 : "     | default:" in " %} 
-      {% assign tag_start          = "tag : #"          | default:" - " %} 
+      {% assign category_start     = "카테고리 : "     | default:" in " %}
+      {% assign tag_start          = "tag : #"          | default:" - " %}
       {% assign category_separator = site.data.strings.category_separator | default:" / " %}
       {% assign tag_separator      = " #"     | default:". "  %}
-    
+
     <span class="ellipis mrl">
       {% include components/tag-list.html tags=post.categories meta=site.featured_categories start_with=category_start separator=category_separator %}
       {% include components/tag-list.html tags=post.tags meta=site.featured_tags start_with=tag_start separator=tag_separator %}
@@ -45,14 +45,15 @@
       {% unless no_link_title %}</a>{% endunless %}
       {% assign alt = '' %}
     {% endif %}{% endunless %}
-    <!--게시물 생성시 hits 생성-->   
+    <!--게시물 생성시 hits 생성-->
     <div style="text-align:right; text-align: center">
       <a href="https://hits.seeyoufarm.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"target="_blank">
         <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://{{ site.url | remove_first:'https://' | remove_first: 'http://' }}{{ page.url }}&count_bg=%236190D3&title_bg=%23070707&icon=codio.svg&icon_color=%2307AFBA&title=%EC%A1%B0%ED%9A%8C%EC%88%98&edge_flat=false"/>
       </a>
     </div>
     {% include components/message.html text=post.description hide=hide_description alt=alt %}
-   
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+         crossorigin="anonymous"></script>
   </header>
   <div class="markdown-body">
   {% if no_excerpt %}
@@ -64,6 +65,8 @@
     {% assign text = site.data.strings.continue_reading | default:"Continue reading <!--post_title-->" %}
     <!--footer-->
     <footer>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8919104066540378"
+           crossorigin="anonymous"></script>
       <p class="read-more">
         {{ text | replace:"<!--post_title-->", post_title }}
       </p>
