@@ -29,8 +29,6 @@ categories:
 언뜻보면 상당히 쉬운 알고리즘 문제인것 같은데, 해설을 보기 전에 해당 문제의 답을 코드로 구현해 보았다.
 
 ~~~cpp
-#include<stdio.h>
-
 int main() {
 	int M, n = 0;
 	scanf("%d", &M);
